@@ -2,18 +2,19 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require('fs');
 
+let token;
+
 // Retrieve Secret from env file
-// Use this section if using the secret in a file
-// let token;
-// try {
-//     token = fs.readFileSync('secret.env', 'utf-8');
-// } catch(e) {
-//     console.log('Error: ', e.stack);
-// } 
-
-
-// Use this for Herkou Hosting
-const token = process.env.BOT_TOKEN;
+// If in developmen
+if (process.argv[2] === 'dev') {
+    try {
+        token = fs.readFileSync('secret.env', 'utf-8');
+    } catch(e) {
+        console.log('Error: ', e.stack);
+    } 
+} else {
+    token = process.env.BOT_TOKEN; 
+}
 
 const prefix = '!';
 
