@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/asrospie/Deputy-Admiral-Bot/issues"
   },
-  "homepage": "https://github.com/asrospie/Deputy-Admiral-Bot#readme"
+  "homepage": "https://github.com/asrospie/Deputy-Admiral-Bot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  }
 }
