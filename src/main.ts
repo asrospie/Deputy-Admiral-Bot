@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require('fs');
 
-let token;
+let token: string = ''; 
 
 // Retrieve Secret from env file
 // If in developmen
@@ -13,14 +13,14 @@ if (process.argv[2] === 'dev') {
         console.log('Error: ', e.stack);
     } 
 } else {
-    token = process.env.BOT_TOKEN; 
+    token = process.env.BOT_TOKEN!; 
 }
 
-const prefix = '!';
+const prefix: string = '!';
 
 client.commands = new Discord.Collection();
 
-const commandFiles = fs.readdirSync('./src/commands/').filter(file => file.endsWith('.js'));
+const commandFiles: [] = fs.readdirSync('./build/commands/').filter((file: string) => file.endsWith('.js'));
 commandFiles.forEach(file => {
     const command = require(`./commands/${file}`);
     client.commands.set(command.name, command);
@@ -32,13 +32,13 @@ client.on('ready', () => {
 });
 
 // On New Member
-client.on('guildMemberAdd', member => {
-    const channel = member.guild.channels.cache.find(ch => ch.name === 'general');
+client.on('guildMemberAdd', (member: any) => {
+    const channel = member.guild.channels.cache.find((ch: any) => ch.name === 'general');
     if (!channel) return;
     channel.send(`Welcome to the Arctic Chapter of Triangle Fraternity!\nPlease follow the guide by typing !new in the onboarding channel`);
 })
 
-client.on('message', message => {
+client.on('message', (message: any) => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).split(/ +/);

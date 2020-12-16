@@ -1,22 +1,23 @@
-const fetch = require('node-fetch');
+const get = require('node-fetch');
+
 const getURL = 'https://script.google.com/macros/s/AKfycbwbXKUIzHxXVY-pjKlx4SaY9EE85JmnkhgPlc4Ho_5XU8Nk56yI/exec'
 
 module.exports = {
     name: 'quote',
     description: "Get a quote from the \"database\".",
-    async execute(message, args) {
-        const snark = ["I can't believe someone actually said this", "Who on earth would say a thing like this", "These are anonymous, not judgement-free", "And yet we __still__ let this person join", ":person_facepalming: This is a doozy", "Here, just take it", "You made me read this with my own ~~eyes~~ code"];
+    async execute(message: any, args: Array<any>) {
+        const snark: Array<string> = ["I can't believe someone actually said this", "Who on earth would say a thing like this", "These are anonymous, not judgement-free", "And yet we __still__ let this person join", ":person_facepalming: This is a doozy", "Here, just take it", "You made me read this with my own ~~eyes~~ code"];
 
-        const snarksnip = snark[Math.floor(Math.random() * snark.length)];
+        const snarksnip: string = snark[Math.floor(Math.random() * snark.length)];
 
         // fetch response from google app script
-        const response = await fetch(getURL);
+        const response: Response = await get(getURL);
 
         // await response -> text, then split text into an array of quotes
-        const respText = await response.text();
-        const quoteArr = respText.split('`');
+        const respText: string = await response.text();
+        const quoteArr: Array<string> = respText.split('`');
 
-        let quote = quoteArr[Math.floor(Math.random() * quoteArr.length)];
+        let quote: string = quoteArr[Math.floor(Math.random() * quoteArr.length)];
 
         // check if first character is a comma
         if (quote.charAt(0) === ',') {
