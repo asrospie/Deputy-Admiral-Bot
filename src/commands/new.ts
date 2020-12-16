@@ -1,7 +1,7 @@
 module.exports = {
     name: 'new',
     description: "Onboarding instructions for new people",
-    execute(message, args) {
+    execute(message: any, args: Array<any>) {
 
         // make sure message is in onboarding
         if (message.channel.name !== 'onboarding') {

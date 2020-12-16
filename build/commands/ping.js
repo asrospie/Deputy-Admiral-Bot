@@ -1,7 +1,8 @@
+"use strict";
 module.exports = {
     name: 'ping',
     description: "this is a test command",
-    execute(message, args) {
+    execute: function (message, args) {
         message.reply('dev!');
     }
-}
+};
