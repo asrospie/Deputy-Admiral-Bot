@@ -11,6 +11,6 @@ module.exports = {
 
         const quote = quoteArr[Math.random() * (quoteArr.length - 2)]
 
-        message.channel.send("Here's a quote:\n\n>||"+quote+"||\n\n*These quotes are anonymized, and are in no way meant to be defamatory.*");
+        message.channel.send("Here's a quote:\n\n> ||"+quote+"||\n\n*These quotes are anonymized, and are in no way meant to be defamatory.*");
     }
 }
