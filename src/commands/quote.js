@@ -25,6 +25,6 @@ module.exports = {
             quote = quote.substring(0, quote.length - 1);
         }
 
-        message.channel.send("Here's a quote:\n\n>||"+quote+"||\n\n*These quotes are anonymized, and are in no way meant to be defamatory.*");
+        message.channel.send("Here's a quote:\n\n> ||"+quote+"||\n*These quotes are anonymized, and are in no way meant to be defamatory.*\nIf you'd like to add a quote, you can enter it here: https://bit.ly/3gTJLl3");
     }
 }
