@@ -8,7 +8,7 @@ let token: string = '';
 // If in developmen
 if (process.argv[2] === 'dev') {
     try {
-        token = fs.readFileSync('secret.env', 'utf-8');
+        token = fs.readFileSync('.env', 'utf-8');
     } catch(e) {
         console.log('Error: ', e.stack);
     } 
