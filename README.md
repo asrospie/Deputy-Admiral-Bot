@@ -7,13 +7,14 @@ This is the Deputy Admiral Bot currently being used on the Triangle Fraternity A
 - [x] Onboarding
 - [x] Basic help command 
 - [x] Random quotes from Alumni quote list
-- [ ] Pull alumni nicknames from Google Sheet
+- [x] Pull alumni nicknames from Google Sheet
 - [ ] Pull nautical merit points from Google Sheet
 - [ ] Announcement
+- [ ] Stories
 
 ## Other In To Dos
 
-- [ ] Fix the help command formatting
+- [x] Fix the help command formatting
 - [ ] Fix the automatic role assignment responses
 
 # Contributing
