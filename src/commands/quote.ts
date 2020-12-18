@@ -1,4 +1,4 @@
-const get = require('node-fetch');
+import fetch, { Response } from 'node-fetch';
 
 if (process.argv[2] === 'dev') {
     require('dotenv').config();
@@ -16,7 +16,7 @@ module.exports = {
         const snarkSnip: string = snark[Math.floor(Math.random() * snark.length)];
 
         // fetch response from google app script
-        const response: Response = await get(getURL);
+        const response: Response = await fetch(getURL);
 
         // await response -> text, then split text into an array of quotes
         const respText: string = await response.text();

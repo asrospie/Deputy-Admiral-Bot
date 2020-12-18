@@ -10,9 +10,11 @@ module.exports = {
                     `\`!iam\`` + `    **-->**` + ` Used in the onboarding process. Use this with one of the following roles: friend, active, alumni (must be used in onboarding)\n\n` +
                     `\`!help\`` + `  **-->**` + ` Use this command if you need help\n\n` +
                     `\`!ping\`` + `  **-->**` + ` Try it!\n\n` +
-                    `\`!quote\`` + ` **-->**` + ` Retrieves a random quote from Alumni... viewer discretion advised.\n` +
+                    `\`!quote\`` + ` **-->**` + ` Retrieves a random quote from Alumni... viewer discretion advised.\n\n` +
+                    `\`!nickname\`` + `**-->**` + ` Finds a Brother's nickname. Usage: !nickname <first> <last>\n` +
                     `--------------------------------------------------------------------------------\n\n` +
-                    `The Deputy Admiral Bot was created by Br. Adm. Alec Rospierski.\nAny bugs that are found are to be reported to the Office of the Admiral.`;
+                    `The Deputy Admiral Bot has been contributed to by Brothers Alec Rospierski, Alex Ott, and Nick McCarter.\n` +
+                    `For any feature requests or bug reports, visit the repo by clicking the link from \`!code\` and creating a new issue.`;
         message.channel.send(msg);
     }
 }
