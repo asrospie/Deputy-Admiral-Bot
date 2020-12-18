@@ -1,4 +1,4 @@
-const nodeFetch = require('node-fetch');
+import fetch, { Response } from 'node-fetch';
 
 if (process.argv[2] === 'dev') {
     require('dotenv').config();
@@ -11,7 +11,7 @@ module.exports = {
     description: `Retrieve a brother's nickname.`,
     async execute(message: any, args: Array<string>) {
 
-        const response: Response = await nodeFetch(url);
+        const response: Response = await fetch(url);
 
         const text: string = await response.text();
 

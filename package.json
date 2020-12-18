@@ -21,6 +21,7 @@
   "homepage": "https://github.com/asrospie/Deputy-Admiral-Bot#readme",
   "dependencies": {
     "@types/node": "^14.14.14",
+    "@types/node-fetch": "^2.5.7",
     "discord.js": "^12.5.1",
     "dotenv": "^8.2.0",
     "node-fetch": "^2.6.1",
