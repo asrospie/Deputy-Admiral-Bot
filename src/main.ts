@@ -51,6 +51,8 @@ client.on('message', (message: any) => {
         client.commands.get('code').execute(message, args);
     } else if (command === 'quote') {
         client.commands.get('quote').execute(message, args);
+    } else if (command === 'nickname') {
+        client.commands.get('nickname').execute(message, args);
     }
 })
 
