@@ -18,25 +18,39 @@ module.exports = {
         // separate text into array
         const sepNames: Array<string> = text.split(',');
 
-        let names: Array<Array<string>> = []; // 2D array containing full set of names
+        const first = args[0];
+        const last = args[1];
+        let fullName: String = '';
 
-        for (let i = 2; i < sepNames.length / 3; i += 3) {
-            names.push([sepNames[i - 2], sepNames[i - 1], sepNames[i]]); // first, last, nickname
-        }
+        sepNames.forEach((name: string, idx: number) => {
+            if (name.trim() === first && sepNames[idx + 1].trim() === last) {
+                // if about to reach end, skip last iterations
+                if (idx === sepNames.length - 4) return;
 
-        // find the nickname
-        let fullName: string = '';
-        names.forEach((name: Array<string>) => {
-            // if the first two values match the first two argument values, there's a match
-            if (name[0] === args[0] && name[1] === args[1]) {
-                fullName = `${args[0]} "${name[2]}" ${args[1]}`;
+                // if none, return none
+                // else, return full name
+                if (sepNames[idx + 2].toLowerCase() === 'none') {
+                    fullName = 'none';
+                } else {
+                    fullName = `${first} "${sepNames[idx + 2].trim()}" ${last}`;
+                }
             }
         });
 
-        // if nickname not found
+        // if nickname not found notify brother doesn't exist
+        // else if nickname is none, ask if update needed
+        // else send nickname
         if (fullName === '') {
-            message.reply(`A Brother by the name of ${args[0]} ${args[1]} was not found.`);
+            message.channel.send(`A Brother by the name of ${args[0]} ${args[1]} was not found.\n` + 
+                `First, try another spelling of their name i.e. Matt = Matthew and Dan = Daniel before the next option.\n` +
+                `If you know the Brother and their nickname, consider adding them to the spreadsheet here:\n` + 
+                `<https://forms.gle/1NsD9bpBTpE9KdLg8>`
+            );
             return;
+        } else if (fullName === 'none') {
+            message.channel.send(`${args[0]} ${args[1]} does not have a nickname. If this is a mistake or needs to be udpated visit:\n` + 
+                `<https://forms.gle/1NsD9bpBTpE9KdLg8>`
+            );
         } else {
             message.channel.send(fullName);
         }
