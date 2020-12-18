@@ -1,20 +1,15 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require('fs');
+require('dotenv').config();
 
 let token: string = ''; 
 
-// Retrieve Secret from env file
-// If in developmen
+// Retrieve token from env
 if (process.argv[2] === 'dev') {
-    try {
-        token = fs.readFileSync('.env', 'utf-8');
-    } catch(e) {
-        console.log('Error: ', e.stack);
-    } 
-} else {
-    token = process.env.BOT_TOKEN!; 
+    require('dotenv').config();
 }
+token = process.env.BOT_TOKEN!; 
 
 const prefix: string = '!';
 

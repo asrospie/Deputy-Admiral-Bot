@@ -1,6 +1,9 @@
 const get = require('node-fetch');
 
-const getURL = 'https://script.google.com/macros/s/AKfycbwbXKUIzHxXVY-pjKlx4SaY9EE85JmnkhgPlc4Ho_5XU8Nk56yI/exec'
+if (process.argv[2] === 'dev') {
+    require('dotenv').config();
+}
+const getURL: string = process.env.QUOTE_TOKEN!;
 
 module.exports = {
     name: 'quote',
