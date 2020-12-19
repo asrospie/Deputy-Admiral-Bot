@@ -9,6 +9,12 @@ module.exports = {
     name: 'quote',
     description: "Get a quote from the \"database\".",
     async execute(message: any, args: Array<any>) {
+        // if not in random, notify user
+        if (message.channel.name !== 'random') {
+            message.author.send('The \`!quote\` command can only be used in random');
+            return;
+        }
+
         // Why not give the bot some personality?
         const snark: Array<string> = ["I can't believe someone actually said this.", "Who on earth would say a thing like this?", "These are anonymous, not judgement-free.", "And yet we __still__ let this person join!", ":person_facepalming: This is a doozy.", "Here, just take it:", "You made me read this with my own ~~eyes~~ code?", "Comin' in hot!", "Here's a winner:", "Served up fresh.", "Look, it was a different time.", "Yeah, sure, why not.", "Context? Who needs context?", "Careful not to cut yourself on this edge! :knife:", "This one'll make someone salty.", "Beep boop :robot:, `ERROR in function fetch(getURL): line 69 failed to execu` - nah, I'm just messing with you."];
 
