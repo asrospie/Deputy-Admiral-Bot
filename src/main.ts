@@ -53,6 +53,8 @@ client.on('message', (message: any) => {
         client.commands.get('quote').execute(message, args);
     } else if (command === 'nickname') {
         client.commands.get('nickname').execute(message, args);
+    } else if (command === 'dog') {
+        client.commands.get('dog').execute(message, args);
     }
 })
 
