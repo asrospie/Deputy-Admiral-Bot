@@ -11,6 +11,7 @@ module.exports = {
                     `\`!help\`` + `  **-->**` + ` Use this command if you need help\n\n` +
                     `\`!ping\`` + `  **-->**` + ` Try it!\n\n` +
                     `\`!quote\`` + ` **-->**` + ` Retrieves a random quote from Alumni... viewer discretion advised. (only available in #random)\n\n` +
+                    `\`!dog\`` + ` **-->**` + ` Retrieves a random dog photo from the internet (only available in #random)\n\n` +
                     `\`!nickname\`` + `**-->**` + ` Finds a Brother's nickname. Usage: !nickname <first> <last>\n` +
                     `--------------------------------------------------------------------------------\n\n` +
                     `The Deputy Admiral Bot has been contributed to by Brothers Alec Rospierski, Alex Ott, and Nick McCarter.\n` +
